@@ -1,0 +1,96 @@
+:root {
+    --background: #ffffff;
+    --text: #080914;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 16% 37%, rgba(194, 207, 255, 0.54), transparent 18rem),
+        radial-gradient(circle at 87% 50%, rgba(255, 215, 131, 0.42), transparent 18rem);
+    filter: blur(12px);
+    opacity: 0.72;
+    z-index: -2;
+}
+
+main {
+    overflow: hidden;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+}
+
+.icon-sm .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-md .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-lg .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.reveal {
+    --reveal-y: 18px;
+    opacity: 0;
+    transform: translateY(calc(var(--reveal-y) + var(--hover-y, 0px)));
+    transition:
+        opacity 650ms ease var(--stagger-delay, 0ms),
+        transform 650ms ease var(--stagger-delay, 0ms),
+        box-shadow 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease,
+        color 160ms ease,
+        filter 220ms ease;
+}
+
+.reveal.is-visible {
+    --reveal-y: 0px;
+    opacity: 1;
+}
+
+.project-reveal {
+    transition:
+        opacity 650ms ease,
+        transform 260ms ease,
+        box-shadow 260ms ease,
+        border-color 180ms ease;
+}
+
+.lift-card:hover {
+    --hover-y: -12px;
+    border-color: #c6cad5;
+    box-shadow: 0 24px 42px rgba(12, 13, 24, 0.16);
+}
+
+.skill-lift:hover {
+    --hover-y: -4px;
+    border-color: #c6cad5;
+    box-shadow: 0 9px 18px rgba(12, 13, 24, 0.09);
+}
