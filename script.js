@@ -88,6 +88,8 @@ const iconPaths = {
         "M10 12h.01",
         "M14 12h.01"
     ],
+    chevronDown: ["M6 9l6 6 6-6"],
+    chevronUp: ["M18 15l-6-6-6 6"],
     code: ["M16 18l6-6-6-6", "M8 6l-6 6 6 6"],
     database: [
         "M4 6c0-2 3.6-3.5 8-3.5S20 4 20 6s-3.6 3.5-8 3.5S4 8 4 6Z",
@@ -458,6 +460,8 @@ function Skills() {
 }
 
 function About() {
+    const [showFullDetails, setShowFullDetails] = useState(false);
+
     return h(
         "section",
         { className: cx(ui.section, "bg-[#f8f8f9]/95 pb-[72px] pt-[68px] md:pb-[87px] md:pt-[91px]"), id: "about", "aria-labelledby": "about-title" },
@@ -480,18 +484,64 @@ function About() {
                 ),
                 h(
                     "p",
-                    { className: "mb-[25px]" },
+                    { className: cx(showFullDetails ? "mb-[25px]" : "mb-0") },
                     "I am a third year Software Engineering student at the University of Portsmouth with a strong interest in software engineering, web development, mobile applications, and SaaS development. I combine technical skill with a business minded approach, allowing me to create digital products that do more than function well, they actively improve the way businesses operate, communicate, and grow."
                 ),
+                showFullDetails &&
+                    h(
+                        "div",
+                        { id: "about-full-details" },
+                        h(
+                            "p",
+                            { className: "mb-[25px]" },
+                            "Through both academic work and independent projects, I have developed a strong ability to design and build practical software solutions that solve real problems. Alongside my studies, I have been building my own applications and delivering web development services to clients, focusing on performance, usability, and conversion. This experience has shown me that the most valuable developer is not simply someone who can write code, but someone who understands how technology should support workflow, reduce friction, improve user experience, and contribute to measurable outcomes."
+                        ),
+                        h(
+                            "p",
+                            { className: "mb-[25px]" },
+                            "With strong communication skills and a proactive mindset, I am able to work effectively with both technical and non technical people, understand needs quickly, and deliver solutions that are clear, purposeful, and aligned with wider goals. I aim to bring not only development ability, but also reliability, initiative, and a strong understanding of how digital products can create long term value."
+                        ),
+                        h(
+                            "p",
+                            { className: "mb-[25px]" },
+                            "My journey has been shaped by a mix of education, sport, discipline, and a genuine interest in how technology works. I attended Collingwood College for secondary school, where my curiosity for software first started to develop. I became interested in the way systems, applications, and digital products were built, which led me to experiment with creating my first piece of software while still at school. From there, I became interested in game development and began learning entry-level programming, which gave me my first real understanding of how ideas could be turned into interactive digital experiences."
+                        ),
+                        h(
+                            "p",
+                            { className: "mb-[25px]" },
+                            "I then continued my education at The Sixth Form Farnborough, where I developed further academically and personally before progressing to university. Over time, my early interest in software and game development grew into a broader passion for software engineering, web development, mobile applications, and SaaS products. This path has allowed me to combine creativity, logic, and problem solving to build digital solutions that are practical, purposeful, and user focused."
+                        ),
+                        h(
+                            "p",
+                            { className: "mb-[25px]" },
+                            "Outside of software engineering, boxing has played a major role in shaping who I am. I am a competition boxer who actively competes under England Boxing, and the sport has taught me discipline, resilience, focus, and the ability to stay composed under pressure. In January 2026, I represented the University of Portsmouth at the BUCS Boxing National Championship, where I won gold in my category. Training and competing at this level has strengthened my mindset and work ethic, which I carry into my academic work, professional projects, and personal development."
+                        ),
+                        h(
+                            "p",
+                            { className: "mb-[25px]" },
+                            "My path into the technology industry has not just been about learning programming languages or frameworks, but about understanding how software can create real value. From building personal projects to delivering web development services for clients, I have become increasingly interested in the full journey of a digital product, from identifying a problem and designing a solution to building, improving, and delivering something that genuinely supports users or businesses."
+                        ),
+                        h(
+                            "p",
+                            { className: "mb-0" },
+                            "As I continue developing in the industry, I am focused on growing as both a technical developer and a problem solver. My goal is to keep improving my ability to build reliable, scalable, and user-focused software while also developing the communication, leadership, and business understanding needed to contribute to meaningful projects. I see software engineering as a field where creativity, logic, and impact all come together, and that is what continues to motivate me."
+                        )
+                    )
+            ),
+            h(
+                "div",
+                { className: "mt-8 flex justify-center" },
                 h(
-                    "p",
-                    { className: "mb-[25px]" },
-                    "Through both academic work and independent projects, I have developed a strong ability to design and build practical software solutions that solve real problems. Alongside my studies, I have been building my own applications and delivering web development services to clients, focusing on performance, usability, and conversion. This experience has shown me that the most valuable developer is not simply someone who can write code, but someone who understands how technology should support workflow, reduce friction, improve user experience, and contribute to measurable outcomes."
-                ),
-                h(
-                    "p",
-                    { className: "mb-0" },
-                    "With strong communication skills and a proactive mindset, I am able to work effectively with both technical and non technical people, understand needs quickly, and deliver solutions that are clear, purposeful, and aligned with wider goals. I aim to bring not only development ability, but also reliability, initiative, and a strong understanding of how digital products can create long term value."
+                    "button",
+                    {
+                        type: "button",
+                        className: ui.secondaryButton,
+                        "aria-controls": "about-full-details",
+                        "aria-expanded": showFullDetails,
+                        onClick: () => setShowFullDetails((isVisible) => !isVisible)
+                    },
+                    h(Icon, { name: showFullDetails ? "chevronUp" : "chevronDown" }),
+                    showFullDetails ? "Show Less" : "Show Full Details"
                 )
             ),
             h("div", { className: "my-[38px] h-px bg-[#dedfe4] md:mb-[38px] md:mt-[52px]" }),
