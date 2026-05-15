@@ -511,7 +511,7 @@ function Footer() {
     return h(
         "footer",
         { className: "border-t border-[#dedfe4] px-6 pb-[45px] pt-12 text-center" },
-        h("p", { className: "mb-0 text-[15px] text-[#717386]" }, "\u00a9 2026 Your Name. Built with HTML, CSS, Tailwind CSS, JavaScript, and React.")
+        h("p", { className: "mb-0 text-[15px] text-[#717386]" }, "\u00a9 2026 Lucas Rusu.")
     );
 }
 
