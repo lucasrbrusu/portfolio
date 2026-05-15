@@ -22,34 +22,34 @@ const ui = {
 
 const projects = [
     {
-        title: "E-Commerce Platform",
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
-        alt: "Code editor displayed on multiple screens",
+        title: "Pillaflow",
+        image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+        alt: "Notebook with planning notes and productivity tools",
         description:
-            "Full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.",
-        tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-        codeUrl: "https://github.com/",
-        demoUrl: "https://example.com/"
+            "Daily productivity app that brings micro habits, planning, health tracking, home routines, and finances into one focused workflow.",
+        tags: ["Productivity", "JavaScript", "React", "PostgreSQL"],
+        demoUrl: "https://pillaflow.com",
+        demoLabel: "Website"
     },
     {
-        title: "AI Task Manager",
-        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
-        alt: "Dark modern workspace with a laptop and monitor",
+        title: "Ruzo Tech",
+        image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80",
+        alt: "Website design wireframes and development workspace",
         description:
-            "Smart task management app with AI-powered priority suggestions and natural language processing.",
-        tags: ["TypeScript", "Next.js", "OpenAI", "Prisma"],
-        codeUrl: "https://github.com/",
-        demoUrl: "https://example.com/"
+            "Conversion-focused web studio site with responsive pages, service flows, dark mode, contact routes, and production-ready launch content.",
+        tags: ["HTML", "CSS", "JavaScript", "Responsive UI"],
+        codeUrl: "https://github.com/lucasrbrusu/Ruzo-Tech",
+        demoUrl: "https://ruzotech.com",
+        demoLabel: "Website"
     },
     {
-        title: "Real-Time Analytics Dashboard",
-        image: "https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?auto=format&fit=crop&w=900&q=80",
-        alt: "Developer desk setup with purple lighting",
+        title: "LLM Benchmark Tool",
+        image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
+        alt: "Code and benchmark data displayed on a laptop",
         description:
-            "Interactive analytics platform with live data visualization and customizable widgets.",
-        tags: ["React", "D3.js", "WebSocket", "MongoDB"],
-        codeUrl: "https://github.com/",
-        demoUrl: "https://example.com/"
+            "Python-based benchmark utility for evaluating large language model performance and comparing results across repeatable test runs.",
+        tags: ["Python", "LLM Testing", "Benchmarking", "Automation"],
+        codeUrl: "https://github.com/lucasrbrusu/LLM-Benchmark"
     }
 ];
 
@@ -407,7 +407,7 @@ function FeaturedProjects() {
                         h("p", { className: "mb-[18px] min-h-0 text-base text-[#717386] md:min-h-[74px]" }, project.description),
                         h(
                             "div",
-                            { className: "mb-[21px] flex flex-wrap gap-2.5", "aria-label": "Technologies used" },
+                            { className: "mb-[21px] flex flex-wrap gap-2.5", "aria-label": "Project tags" },
                             project.tags.map((tag) =>
                                 h("span", { className: "inline-flex min-h-[26px] items-center rounded-full border border-[#c6cad5] bg-[#f9fafb] px-3.5 py-0.5 text-[13px] font-semibold text-[#1d2030]", key: tag }, tag)
                             )
@@ -415,8 +415,10 @@ function FeaturedProjects() {
                         h(
                             "div",
                             { className: "icon-md flex flex-wrap gap-[18px]" },
-                            h("a", { className: "inline-flex items-center gap-2 text-[15px] font-semibold text-[#8b8e9f] transition hover:text-[#080914]", href: project.codeUrl }, h(Icon, { name: "github" }), "Code"),
-                            h("a", { className: "inline-flex items-center gap-2 text-[15px] font-semibold text-[#8b8e9f] transition hover:text-[#080914]", href: project.demoUrl }, h(Icon, { name: "external" }), "Live Demo")
+                            project.codeUrl &&
+                                h("a", { className: "inline-flex items-center gap-2 text-[15px] font-semibold text-[#8b8e9f] transition hover:text-[#080914]", href: project.codeUrl }, h(Icon, { name: "github" }), "Code"),
+                            project.demoUrl &&
+                                h("a", { className: "inline-flex items-center gap-2 text-[15px] font-semibold text-[#8b8e9f] transition hover:text-[#080914]", href: project.demoUrl }, h(Icon, { name: "external" }), project.demoLabel || "Live Demo")
                         )
                     )
                 )
@@ -488,7 +490,8 @@ function About() {
                 "div",
                 { className: "flex flex-wrap justify-center gap-[18px] max-md:w-full max-md:flex-col max-md:items-stretch" },
                 h("a", { className: ui.primaryButton, href: "mailto:elucas2005@icloud.com" }, h(Icon, { name: "mail" }), "Get in Touch"),
-                h("a", { className: ui.secondaryButton, href: "https://github.com/lucasrbrusu" }, h(Icon, { name: "github" }), "GitHub")
+                h("a", { className: ui.secondaryButton, href: "https://github.com/lucasrbrusu" }, h(Icon, { name: "github" }), "GitHub"),
+                h("a", { className: ui.secondaryButton, href: "https://www.linkedin.com/in/lucasrbrusu/" }, h(Icon, { name: "linkedin" }), "LinkedIn")
             )
         )
     );
