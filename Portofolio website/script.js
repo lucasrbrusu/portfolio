@@ -480,8 +480,18 @@ function About() {
                 ),
                 h(
                     "p",
+                    { className: "mb-[25px]" },
+                    "I am a third year Software Engineering student at the University of Portsmouth with a strong interest in software engineering, web development, mobile applications, and SaaS development. I combine technical skill with a business minded approach, allowing me to create digital products that do more than function well, they actively improve the way businesses operate, communicate, and grow."
+                ),
+                h(
+                    "p",
+                    { className: "mb-[25px]" },
+                    "Through both academic work and independent projects, I have developed a strong ability to design and build practical software solutions that solve real problems. Alongside my studies, I have been building my own applications and delivering web development services to clients, focusing on performance, usability, and conversion. This experience has shown me that the most valuable developer is not simply someone who can write code, but someone who understands how technology should support workflow, reduce friction, improve user experience, and contribute to measurable outcomes."
+                ),
+                h(
+                    "p",
                     { className: "mb-0" },
-                    "When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or mentoring aspiring developers."
+                    "With strong communication skills and a proactive mindset, I am able to work effectively with both technical and non technical people, understand needs quickly, and deliver solutions that are clear, purposeful, and aligned with wider goals. I aim to bring not only development ability, but also reliability, initiative, and a strong understanding of how digital products can create long term value."
                 )
             ),
             h("div", { className: "my-[38px] h-px bg-[#dedfe4] md:mb-[38px] md:mt-[52px]" }),
