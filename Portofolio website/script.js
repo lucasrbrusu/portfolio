@@ -67,9 +67,9 @@ const skills = [
 ];
 
 const socialLinks = [
-    { label: "GitHub", href: "https://github.com/", icon: "github", active: true },
-    { label: "LinkedIn", href: "https://www.linkedin.com/", icon: "linkedin" },
-    { label: "Email", href: "mailto:your.email@example.com", icon: "mail" }
+    { label: "GitHub", href: "https://github.com/lucasrbrusu", icon: "github", active: true },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/lucasrbrusu/", icon: "linkedin", active: true },
+    { label: "Email", href: "mailto:elucas2005@icloud.com", icon: "mail", active: true }
 ];
 
 const iconPaths = {
@@ -313,7 +313,7 @@ function Hero() {
         {
             className: cx(
                 ui.section,
-                "grid min-h-[calc(100vh-86px)] place-items-center pb-[78px] pt-[92px] md:min-h-[calc(100vh-88px)] md:pb-[108px] md:pt-24"
+                "grid min-h-screen place-items-center pb-[78px] pt-[92px] md:pb-[108px] md:pt-24"
             ),
             "aria-labelledby": "hero-title"
         },
@@ -324,9 +324,8 @@ function Hero() {
                 "p",
                 {
                     className:
-                        "icon-sm mb-8 inline-flex items-center gap-2 rounded-full border border-[#c6cad5] bg-[#eff0f3] px-4 py-[7px] text-sm font-semibold text-[#222336] shadow-[inset_0_-1px_0_rgba(0,0,0,0.05)] md:mb-[42px]"
+                        "mb-8 inline-flex items-center rounded-full border border-[#c6cad5] bg-[#eff0f3] px-4 py-[7px] text-sm font-semibold text-[#222336] shadow-[inset_0_-1px_0_rgba(0,0,0,0.05)] md:mb-[42px]"
                 },
-                h(Icon, { name: "sparkles" }),
                 "Available for Projects"
             ),
             h("h1", { id: "hero-title", className: "mb-7 text-[26px] font-bold leading-tight tracking-normal text-[#080914] sm:text-[29px] md:text-[32px]" }, "Software Engineer & Developer"),
@@ -488,8 +487,8 @@ function About() {
             h(
                 "div",
                 { className: "flex flex-wrap justify-center gap-[18px] max-md:w-full max-md:flex-col max-md:items-stretch" },
-                h("a", { className: ui.primaryButton, href: "mailto:your.email@example.com" }, h(Icon, { name: "mail" }), "your.email@example.com"),
-                h("a", { className: ui.secondaryButton, href: "https://github.com/" }, h(Icon, { name: "github" }), "GitHub")
+                h("a", { className: ui.primaryButton, href: "mailto:elucas2005@icloud.com" }, h(Icon, { name: "mail" }), "Get in Touch"),
+                h("a", { className: ui.secondaryButton, href: "https://github.com/lucasrbrusu" }, h(Icon, { name: "github" }), "GitHub")
             )
         )
     );
